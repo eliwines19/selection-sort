@@ -4,14 +4,13 @@
 public class SelectionSort {
 
     void sort(int arr[]){
-        int n = arr.length;
 
-        // One by one iterate through unsorted list
-        for (int i = 0; i < n-1; i++) {
+        // Iterate through the unsorted list
+        for (int i = 0; i < arr.length-1; i++) {
 
             // Find the minimum element in unsorted array
             int minIndex = i;
-            for (int j = i+1; j < n; j++) {
+            for (int j = i+1; j < arr.length; j++) {
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
@@ -25,15 +24,18 @@ public class SelectionSort {
     }
 
     void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+ " ");
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        
+        SelectionSort ex = new SelectionSort();
+        int arr[] = {43, 45, 1, 23, 29, 36, 14, 18, 41};
+        ex.sort(arr);
+        System.out.println("Sorted Array");
+        ex.printArray(arr);
     }
 
 }
